@@ -46,6 +46,11 @@ export class Bingo {
     // this function renders the cards to the screen
     console.log("rendering cards");
 
+    for(let i = 0; i < this.cards.length ; i++) {
+        let card = new Card(this.cards[i]);
+        card.render();
+    }
+
     // 🔥🔥🔥 TODO 2
     // loop through all the cards in the array and create a new instance of a Card()
     // for()
