@@ -48,7 +48,7 @@ export default class Bingo {
 
     for(let i = 0; i <= this.cards.length -1 ; i++) {
         let card = new Card(this.cards[i]);
-        card.render();
+        card.render(i);
     }
 
     // 🔥🔥🔥 TODO 2

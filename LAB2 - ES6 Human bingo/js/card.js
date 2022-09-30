@@ -24,14 +24,15 @@ export default class Card {
     // let card = document.createElement("div");
     // card.dataset.number = counter + 1;
     // don't forget to append the child to to DOM
-    console.log(this.title);
 
-    // for(let i = 1; i < Bingo.cards; i++){
     let card = document.createElement("div");
-    card.innerHTML = `<div class="bingo__card" data-number="1" id="bingo__card1">${this.title}</div>`;
-    document.querySelector(".bingo__board").appendChild(card);
+    card.class = "bingo__card";
+    card.id =  "bingo__card1";
     card.dataset.number = counter + 1;
-    // }
+    card.innerHTML = `<p>${this.title}</p>`;
+
+    document.querySelector(".bingo__board").appendChild(card);
+
 
 
 
