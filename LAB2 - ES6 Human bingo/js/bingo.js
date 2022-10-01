@@ -65,6 +65,8 @@ export default class Bingo {
     console.log("Checking for a winner");
     // 🔥🔥🔥 TODO 6
     // count all cards that are marked as done (select done items and count them with .length)
+    
+    //queryselectorAll returns number!!!!
 
       let cardsDone = document.querySelectorAll(".bingo__card--done")
       if (cardsDone.length === 5) {
