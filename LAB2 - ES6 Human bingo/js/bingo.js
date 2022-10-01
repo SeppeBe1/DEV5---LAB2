@@ -74,7 +74,6 @@ export default class Bingo {
 
   }
 
-    
     /// let cardsDone = ;
     // if (cardsDone.length === 5) {
     // show the animated gif to the winner
@@ -89,12 +88,17 @@ export default class Bingo {
     // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
     let cardsWon = [];
     console.log("Saving bingo to localstorage");
-    // let cards = document.querySelectorAll(".bingo__card--done");
+ 
+    let cards = document.querySelectorAll(".bingo__card--done");
+    cardsWon.push(...cards);
+    localStorage.setItem(JSON.stringify(cardsWon),"Bingo");
+
 
     // if there are not done cards, remove localstorage
-    // if (cards.length === 0) {
+    if (cards.length === 0) {
+      localStorage.clear();
     // remove localstorage
-    // }
+    }
 
     // save a selection like [1, 7, 8] to localstorage item "bingo"
     // you might want to check out how JSON.stringify() works
