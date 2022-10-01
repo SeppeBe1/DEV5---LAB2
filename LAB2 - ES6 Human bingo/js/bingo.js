@@ -90,8 +90,15 @@ export default class Bingo {
     console.log("Saving bingo to localstorage");
  
     let cards = document.querySelectorAll(".bingo__card--done");
-    cardsWon.push(...cards);
-    localStorage.setItem(JSON.stringify(cardsWon),"Bingo");
+    let card = document.querySelector(".bingo__card--done");
+    let cardnumber =card.dataset.number;
+
+    cards.forEach(card => cardsWon.push(card.dataset.number));
+  
+    console.log(cardsWon);
+    
+    
+    localStorage.setItem("bingo",JSON.stringify(cardsWon));
 
 
     // if there are not done cards, remove localstorage
@@ -110,6 +117,10 @@ export default class Bingo {
     // this works the other way around of the save function
     // load the saved string from localstorage and parse it as an array, then loop over it
     console.log("loading bingo selection from localstorage");
+    console.log(localStorage.length);
+    let cardsWon = JSON.parse(localStorage.getItem("bingo"));
+    console.log(localStorage.getItem("bingo"));
+
 
     // check if localstorage item exists
     if (localStorage.getItem("bingo")) {
