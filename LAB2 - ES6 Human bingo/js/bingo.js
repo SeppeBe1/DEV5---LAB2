@@ -70,8 +70,7 @@ export default class Bingo {
 
       let cardsDone = document.querySelectorAll(".bingo__card--done")
       if (cardsDone.length === 5) {
-        document.querySelector(".bingo__overlay").style.display = "block";
-
+      document.querySelector(".bingo__overlay").style.display = "block";
   }
 
     /// let cardsDone = ;
@@ -90,14 +89,12 @@ export default class Bingo {
     console.log("Saving bingo to localstorage");
  
     let cards = document.querySelectorAll(".bingo__card--done");
-    let card = document.querySelector(".bingo__card--done");
-
     cards.forEach(card => cardsWon.push(card.dataset.number));
     localStorage.setItem("bingo",JSON.stringify(cardsWon));
 
 
     // if there are not done cards, remove localstorage
-    if (cards.length === 0) {
+    if (cards.length === 0 || cardsWon.length >=5) {
       localStorage.clear();
     // remove localstorage
     }
@@ -118,8 +115,6 @@ export default class Bingo {
       let cardsArray = JSON.parse(localStorage.getItem("bingo"));
       cardsArray.forEach(card => document.getElementById(`bingo__card${card}`).classList.toggle("bingo__card--done"));
       console.log(localStorage.getItem("bingo"));
-  
-  
       // let cardsWon = JSON.parse();
       // JSON.parse() will convert the string [1, 7, 8] back to an array which you can loop
       // loop over the numbers 1, 7, 8 and mark those cards as done by adding the right CSS class
