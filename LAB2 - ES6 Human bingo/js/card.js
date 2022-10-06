@@ -31,7 +31,7 @@ export default class Card {
     card.classList.add("bingo__card");
     card.id =  `bingo__card${counter + 1}`;
     card.dataset.number = counter + 1;
-    card.innerHTML = `<p>${this.title}</p>`;
+    card.innerHTML = `${this.title}`;
 
     document.querySelector(".bingo__board").appendChild(card);
 
